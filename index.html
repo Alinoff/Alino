@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <title>Exemplo 03 - Media Query</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .header {
+        min-height: 10vh;
+        width: 100%;
+        background-color: black;
+        color: azure;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+      }
+      .lista-menu {
+        display: flex;
+        list-style-type: none;
+        font-size: 1.3rem;
+      }
+
+      .item-menu {
+        padding: 10px 15px;
+      }
+      .link-menu {
+        text-decoration: none;
+        color: aliceblue;
+      }
+      #icone-menu {
+        font-size: 2rem;
+        display: none;
+      }
+
+      /* ------------------grid------------------------ */
+
+      .bloco1 {
+        display: grid;
+        width: 100%;
+        min-height: 400px;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 20px;
+      }
+
+      .div-bloco1 {
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        border: 2px solid rgb(240, 240, 240);
+        padding: 2vh;
+        text-align: justify;
+        box-shadow: rgb(13, 112, 218) 0px 20px 30px -10px;
+      }
+      .titulo-bloco1 {
+        text-align: center;
+        padding: 10px;
+        font-size: 3.5vh;
+      }
+      .img-bloco1 {
+        width: 100%;
+        height: 300px;
+        border-radius: 50%;
+        box-shadow: rgb(46, 55, 65) 0px 20px 30px -10px;
+      }
+      .bloco2 {
+        display: grid;
+        width: 100%;
+        height: auto;
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: auto;
+        background-color: aliceblue;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+      }
+      .img-bloco2 {
+        width: 90%;
+        height: 450px;
+        border-radius: 15px;
+        display: block;
+        margin: 0 auto;
+        box-shadow: rgb(13, 112, 218) 0px 20px 30px -10px;
+      }
+      .titulo-bloco2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .p-bloco2 {
+        font-size: 1.4rem;
+        line-height: 36px;
+        text-align: justify;
+        padding: 2%;
+      }
+
+      .bloco3 {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 35vh;
+      }
+      .div-bloco3 {
+        display: block;
+        height: 180px;
+        margin: 0 auto;
+        position: relative;
+        width: 80%;
+        
+      }
+      .txt-bloco3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: antiquewhite;
+        font-size: 1.8rem;
+        transform: translate(-50%, -50%);
+      }
+      .img-bloco3 {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        filter: brightness(40%);
+        box-shadow: rgb(13, 112, 218) 0px 10px 15px -5px;
+      }
+
+      /* .bloco2 {
+        display: flex;
+        justify-content: space-around;
+        background-color: teal;
+      }
+      .div-bloco2 {
+        margin: 35px;
+        min-height: 30vh;
+        width: 30vw;
+        text-align: justify;
+        background-color: blue;
+      }
+      .div-bloco2 h2 {
+        margin: 15px;
+        text-align: center;
+      }
+      .div-bloco2 img {
+        width: 190%;
+      }
+
+      /* .img-bloco1 {
+        min-height: 20vh;
+        width: 20vw;
+        border-radius: 100%;
+        margin-bottom: 10px;
+        border: 3px solid gray;
+        margin-top: 10px;
+      }
+
+      .div-bloco1 {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        margin: 10px;
+        align-items: center;
+        border: 3px solid rgb(192, 191, 191);
+        text-align: justify;
+      }
+
+      .div-bloco1 p {
+        margin: 10px;
+      }
+
+      .bloco1 {
+        display: flex;
+      }
+      .titulo-bloco1 {
+        font-size: 30px;
+      } */
+
+      @media screen and (max-width: 998px) {
+        .bloco1 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .bloco2 {
+          grid-template-columns: 1fr;
+        }
+        .p-bloco2 {
+          font-size: 1rem;
+          line-height: 25px;
+        }
+        .img-bloco2 {
+          height: 220px;
+        }
+        .bloco3 {
+          grid-template-columns: auto auto;
+        }
+        .div-bloco3{
+        display:block;
+        height:180px;
+        margin: 0 auto;
+        position: relative;
+        width: 340px;
+
+      }
+      }
+
+      @media screen and (max-width: 768px) {
+        .header {
+          flex-direction: column;
+        }
+        .lista-menu {
+          flex-direction: column;
+        }
+        #icone-menu {
+          display: block;
+        }
+        .item-menu {
+          display: none;
+          text-align: center;
+        }
+        .ativar {
+          display: block;
+        }
+        .item-menu:hover {
+          text-align: center;
+          background-color: aquamarine;
+          width: 100vw;
+        }
+        .link-menu:hover {
+          text-align: center;
+          color: black;
+        }
+        .bloco1 {
+          grid-template-columns: 1fr;
+        }
+        .bloco2 {
+          grid-template-columns: 1fr;
+        }
+        .p-bloco2 {
+          font-size: 1rem;
+          line-height: 25px;
+        }
+        .img-bloco2 {
+          height: 220px;
+        }
+        .bloco3 {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header.header>h1.logo-txt+nav.menu>ul.lista-menu>li.item-menu*4>a.link-menu[href="#"]{link 0$} -->
+    <header class="header">
+      <h1 class="logo-txt">Logo site</h1>
+      <div>
+        <span id="icone-menu" class="material-symbols-outlined"> menu </span>
+      </div>
+      <nav class="menu">
+        <ul class="lista-menu">
+          <li class="item-menu"><a href="#" class="link-menu">link 01</a></li>
+          <li class="item-menu"><a href="#" class="link-menu">link 02</a></li>
+          <li class="item-menu"><a href="#" class="link-menu">link 03</a></li>
+          <li class="item-menu"><a href="#" class="link-menu">link 04</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- section.bloco1>div.div-bloco1*4>img.img-bloco1[src="imgs/louisarmstrong.jpg"]+h3.titulo-bloco1+p>lorem -->
+      <section class="bloco1">
+        <div class="div-bloco1">
+          <img src="imgs/louisarmstrong.jpg" alt="" class="img-bloco1" />
+          <h3 class="titulo-bloco1">Modelo 01</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            veritatis porro earum molestiae consectetur temporibus numquam
+            reprehenderit et eligendi, eveniet sint? Temporibus ex fugit error
+            quos praesentium quidem iste eligendi!
+          </p>
+        </div>
+        <div class="div-bloco1">
+          <img src="imgs/louisarmstrong.jpg" alt="" class="img-bloco1" />
+          <h3 class="titulo-bloco1">Modelo 02</h3>
+          <p>
+            Sequi, odio consequuntur officiis esse, deserunt nulla dolorum atque
+            nostrum possimus quod, sint sapiente. Mollitia repellat placeat quo?
+            Enim perferendis culpa ipsam. At accusantium, molestiae maxime sint
+            optio tempora quidem?
+          </p>
+        </div>
+        <div class="div-bloco1">
+          <img src="imgs/louisarmstrong.jpg" alt="" class="img-bloco1" />
+          <h3 class="titulo-bloco1">Modelo 03</h3>
+          <p>
+            Consequuntur et hic nobis optio? Unde ratione officiis illo veniam
+            accusantium numquam ducimus accusamus laborum iste beatae, sapiente
+            excepturi aperiam pariatur, est sit minima modi praesentium, nihil
+            vitae necessitatibus maxime!
+          </p>
+        </div>
+        <div class="div-bloco1">
+          <img src="imgs/louisarmstrong.jpg" alt="" class="img-bloco1" />
+          <h3 class="titulo-bloco1">Modelo 04</h3>
+          <p>
+            Magni doloremque, optio corporis ipsum similique dolorem blanditiis
+            voluptate nihil quia iusto laudantium maxime ipsam rerum! Eius
+            fugiat eligendi laudantium mollitia. Facere quae corrupti vel
+            ducimus, nostrum veniam. A, nobis.
+          </p>
+        </div>
+      </section>
+
+      <section class="bloco2">
+        <div class="div-bloco2">
+          <img class="img-bloco2" src="imgs/podcast.png" />
+        </div>
+        <div class="div-bloco2">
+          <h2 class="titulo-bloco2">Titulo Bloco 2</h2>
+          <p class="p-bloco2">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id aliquid
+            earum fuga laborum. Quo aspernatur placeat eligendi, odio, tenetur,
+            eius inventore voluptatem sint ea nam iste quisquam assumenda!
+            Possimus, soluta? Lorem ipsum dolor, sit amet consectetur
+            adipisicing elit. Animi veniam non, ma Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Perspiciatis a quod temporibus optio
+            architecto quas dolor voluptate mollitia necessitatibus quam. In
+            natus mollitia tempora iure harum ratione facere rem veritatis? gni
+            reprehenderit ex delectus atque itaque quasi magnam dolorum eius
+            numquam at odio praesentium doloremque perspiciatis dolores
+            dignissimos natus.
+          </p>
+        </div>
+      </section>
+
+      <section class="bloco3">
+        <div class="div-bloco3">
+          <img src="imgs/louisarmstrong.jpg" alt="" class="img-bloco3" />
+          <h3 class="txt-bloco3">Texto 01</h3>
+        </div>
+        <div class="div-bloco3">
+          <img src="imgs/louisarmstrong.jpg" alt="" class="img-bloco3" />
+          <h3 class="txt-bloco3">Texto 02</h3>
+        </div>
+        <div class="div-bloco3">
+          <img src="imgs/louisarmstrong.jpg" alt="" class="img-bloco3" />
+          <h3 class="txt-bloco3">Texto 03</h3>
+        </div>
+        <div class="div-bloco3">
+          <img src="imgs/louisarmstrong.jpg" alt="" class="img-bloco3" />
+          <h3 class="txt-bloco3">Texto 04</h3>
+        </div>
+        <div class="div-bloco3">
+          <img src="imgs/louisarmstrong.jpg" alt="" class="img-bloco3" />
+          <h3 class="txt-bloco3">Texto 05</h3>
+        </div>
+        <div class="div-bloco3">
+          <img src="imgs/louisarmstrong.jpg" alt="" class="img-bloco3" />
+          <h3 class="txt-bloco3">Texto 06</h3>
+        </div>
+        <div class="div-bloco3">
+          <img src="imgs/louisarmstrong.jpg" alt="" class="img-bloco3" />
+          <h3 class="txt-bloco3">Texto 07</h3>
+        </div>
+        <div class="div-bloco3">
+          <img src="imgs/louisarmstrong.jpg" alt="" class="img-bloco3" />
+          <h3 class="txt-bloco3">Texto 08</h3>
+        </div>
+        <div class="div-bloco3">
+          <img src="imgs/louisarmstrong.jpg" alt="" class="img-bloco3" />
+          <h3 class="txt-bloco3">Texto 09</h3>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const menu = document.getElementById("icone-menu");
+      const link = document.getElementsByClassName("item-menu");
+
+      menu.addEventListener("click", () => {
+        for (i = 0; i <= link.length; i++) {
+          link[i].classList.toggle("ativar");
+        }
+      });
+    </script>
+  </body>
+</html>
